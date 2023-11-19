@@ -18,7 +18,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping(path = "/save")
-    public String saveEmployee(@RequestBody Employee employeeDTO)
+    public String saveEmployee(@RequestBody EmployeeDTO employeeDTO)
     {
         String id = employeeService.addEmployee(employeeDTO);
         return id;

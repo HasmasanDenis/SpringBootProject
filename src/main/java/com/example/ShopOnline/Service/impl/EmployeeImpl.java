@@ -9,6 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.ShopOnline.LoginMessage;
 
+import java.util.Optional;
+
 @Service
     public class EmployeeImpl implements EmployeeService {
 
@@ -44,7 +46,7 @@ import com.example.ShopOnline.LoginMessage;
                 employeeRepo.findByEmail(loginDTO.getEmail());
         if (employee1 != null) {
             String password = loginDTO.getPassword();
-            Sting encodedPassword = employee1.getPassword();
+            String encodedPassword = employee1.getPassword();
             Boolean isPwsdRight = passwordEncoder.matches(password, encodedPassword);
 
             if (isPwsdRight) {
